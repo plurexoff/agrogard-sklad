@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="190" height="48" viewBox="0 0 190 48">
+  <!-- Логотип-заглушка AgroGard: стилизованный росток в круге + текст.
+       Чтобы заменить логотип, положите свой SVG в assets/logo.svg
+       (рекомендуемая высота 40-48px). -->
+  <circle cx="24" cy="24" r="21" fill="#2E7D32"/>
+  <circle cx="24" cy="24" r="21" fill="none" stroke="#1B5E20" stroke-width="1.5"/>
+  <path d="M24 37c0-9 4.5-15.5 13-19.5-1 8.7-4.5 16-13 19.5z" fill="#A5D6A7"/>
+  <path d="M24 37c0-8-3.4-13.8-10.5-17 .6 7.3 3.5 13.7 10.5 17z" fill="#66BB6A"/>
+  <path d="M24 38V21" stroke="#E8F5E9" stroke-width="2" stroke-linecap="round"/>
+  <text x="52" y="24" font-family="Segoe UI, system-ui, sans-serif" font-size="19" font-weight="700" fill="#1B5E20">Agro<tspan fill="#4CAF50">Gard</tspan></text>
+  <text x="52" y="38" font-family="Segoe UI, system-ui, sans-serif" font-size="9.5" letter-spacing="1.5" fill="#607D8B">IT-SKLAD LOCAL</text>
+</svg>

@@ -1,0 +1,3 @@
+sku;name;category;manufacturer;model;unit;quantity;min_stock;serial_tracking;warranty_until;comment;tags
+MON-DELL-2422;Монитор Dell P2422H;Оборудование;Dell;P2422H;шт.;5;1;0;2028-01-15;Пример: монитор 24 дюйма;новое
+TONER-KYO-TK1150;Картридж Kyocera TK-1150;Расходники;Kyocera;TK-1150;шт.;10;3;0;;Для принтеров ECOSYS P2235dn;

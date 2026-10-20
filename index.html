@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ИТ-Склад AgroGard (Local Edition)</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Шапка приложения с логотипом -->
+  <header class="topbar">
+    <img src="assets/logo.svg" alt="AgroGard" class="topbar-logo">
+    <div class="topbar-titles">
+      <div class="topbar-title">ИТ-Склад AgroGard</div>
+      <div class="topbar-subtitle">Local Edition &middot; локальный учёт ИТ-оборудования &middot; данные хранятся только на этом ПК</div>
+    </div>
+    <div class="topbar-right">
+      <button class="bell" id="bell-btn" title="Позиции ниже минимума — нажмите, чтобы открыть список">
+        <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+        <span class="bell-badge" id="bell-badge" hidden>0</span>
+      </button>
+      <div class="profile">
+        <div class="avatar">ИТ</div>
+        <div><div class="p-name">ИТ-специалист</div><div class="p-role">АО «АгроГард»</div></div>
+      </div>
+      <button class="fab" id="fab-add" title="Быстрое добавление"><span>+</span></button>
+      <div class="fab-menu" id="fab-menu" hidden>
+        <button data-act="product">＋ Новый товар</button>
+        <button data-act="in">＋ Новый приход</button>
+        <button data-act="out">− Новая выдача</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-row">
+    <!-- Боковое меню -->
+    <aside class="sidebar">
+      <nav class="nav" id="main-nav">
+        <a class="nav-item" href="#/dashboard" data-route="/dashboard">
+          <svg viewBox="0 0 24 24" class="nav-ico"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="4.5" rx="2"/><rect x="13.5" y="10.5" width="7.5" height="10.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/></svg>
+          <span>Дашборд</span>
+        </a>
+        <a class="nav-item" href="#/products" data-route="/products">
+          <svg viewBox="0 0 24 24" class="nav-ico"><path d="M21 8.5v7a2 2 0 0 1-1 1.73l-7 4.04a2 2 0 0 1-2 0l-7-4.04A2 2 0 0 1 3 15.5v-7a2 2 0 0 1 1-1.73l7-4.04a2 2 0 0 1 2 0l7 4.04A2 2 0 0 1 21 8.5Z"/><path d="M3.3 7.3 12 12l8.7-4.7M12 22V12"/></svg>
+          <span>Номенклатура</span>
+        </a>
+        <a class="nav-item" href="#/operations" data-route="/operations">
+          <svg viewBox="0 0 24 24" class="nav-ico"><path d="M8 3 4 7l4 4M4 7h16M16 21l4-4-4-4M20 17H4"/></svg>
+          <span>Операции</span>
+        </a>
+        <a class="nav-item" href="#/issued" data-route="/issued">
+          <svg viewBox="0 0 24 24" class="nav-ico"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <span>Выданное</span>
+        </a>
+        <a class="nav-item" href="#/inventory" data-route="/inventory">
+          <svg viewBox="0 0 24 24" class="nav-ico"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4.5V3h6v1.5M9 11l2 2 4-4"/></svg>
+          <span>Инвентаризация</span>
+        </a>
+        <a class="nav-item" href="#/employees" data-route="/employees">
+          <svg viewBox="0 0 24 24" class="nav-ico"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg>
+          <span>Сотрудники</span>
+        </a>
+        <a class="nav-item" href="#/reports" data-route="/reports">
+          <svg viewBox="0 0 24 24" class="nav-ico"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20"/></svg>
+          <span>Отчёты</span>
+        </a>
+        <a class="nav-item" href="#/settings" data-route="/settings">
+          <svg viewBox="0 0 24 24" class="nav-ico"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1.03 1.56V21a2 2 0 1 1-4 0v-.09a1.7 1.7 0 0 0-1.11-1.56 1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.56-1.03H3a2 2 0 1 1 0-4h.09A1.7 1.7 0 0 0 4.65 8.9a1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1.03-1.56V3a2 2 0 1 1 4 0v.09c0 .68.4 1.3 1.03 1.56.62.27 1.35.13 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.7 1.7 0 0 0-.34 1.87v.08c.26.61.88 1.02 1.56 1.02H21a2 2 0 1 1 0 4h-.09c-.68 0-1.29.4-1.51 1.03Z"/></svg>
+          <span>Настройки</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">v1.0 &middot; IndexedDB</div>
+    </aside>
+
+    <!-- Основная область, сюда рендерятся страницы -->
+    <main class="content" id="page-content"></main>
+  </div>
+
+  <!-- Корневые контейнеры модальных окон и уведомлений -->
+  <div id="modal-root"></div>
+  <div id="toast-container"></div>
+
+  <!--
+    Скрипты подключаются как классические (не type="module") намеренно:
+    ES-модули по протоколу file:// блокируются CORS-политикой Chrome/Edge,
+    а приложение обязано запускаться двойным кликом по index.html без сервера.
+    Каждый файл — самостоятельный модуль в пространстве имён window.AG.
+    Порядок подключения важен: сначала инфраструктура, затем страницы, затем app.js.
+  -->
+  <script src="js/db.js"></script>
+  <script src="js/csv.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/operations.js"></script>
+  <script src="js/serials.js"></script>
+  <script src="js/employees.js"></script>
+  <script src="js/inventory.js"></script>
+  <script src="js/reports.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
