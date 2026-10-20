@@ -36,7 +36,7 @@ namespace AgroGardSklad
         internal static readonly string UserDataDir = Path.Combine(RootDir, "webview2");
 
         // Увеличьте версию при обновлении встроенных файлов приложения
-        internal const string AppVersion = "1.0";
+        internal const string AppVersion = "1.1";
 
         [STAThread]
         private static void Main()
